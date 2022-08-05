@@ -2,6 +2,7 @@ import { createTheme, styled, ThemeProvider } from "@mui/material";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
+import { Posts } from "./pages/Posts";
 
 const theme = createTheme({
   palette: {
@@ -25,7 +26,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={"Home"} />
-            <Route path="/page1" element={"Page 1"} />
+            <Route path="/posts" element={<Posts />} />
             <Route path="/page2" element={"Page 2"} />
           </Routes>
         </Wrapper>
