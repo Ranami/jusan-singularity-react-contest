@@ -2,5 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { posts } from "./reducers/posts";
 
 export const store = configureStore({
-  reducer: { ...posts },
+  reducer: combineReducers({
+    // posts,
+  }),
 });
