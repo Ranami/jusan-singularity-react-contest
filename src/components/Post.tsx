@@ -4,7 +4,9 @@ import { IPost } from "../types/post";
 
 const Wrapper = styled("div")`
   border: 2px solid black;
+  box-sizing: border-box;
   width: 500px;
+  padding: 10px;
 `;
 
 type PostType = {

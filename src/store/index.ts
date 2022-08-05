@@ -1,4 +1,6 @@
-import { configureStore, createStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { posts } from "./reducers/posts";
 
-export const store = createStore(posts);
+export const store = configureStore({
+  reducer: { ...posts },
+});

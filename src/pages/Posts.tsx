@@ -1,7 +1,9 @@
 import { styled } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { instance } from "../axios-instance";
 import { Post } from "../components/Post";
+import { PostsActions } from "../store/reducers/posts";
 import { IPost } from "../types/post";
 
 const FlexWrapper = styled("div")`
@@ -14,10 +16,11 @@ const FlexWrapper = styled("div")`
 
 export const Posts = () => {
   const [posts, setPosts] = useState<IPost[]>([]);
+  const dispatch = useDispatch();
 
   const getData = async () => {
     const data = await instance.get("/posts");
-    setPosts(data.data);
+    dispatch({ type: PostsActions.GET_POSTS });
   };
 
   useEffect(() => {

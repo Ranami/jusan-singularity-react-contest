@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
-const pages = ["Home", "Posts", "Page2"];
+const pages = ["Home", "Posts"];
 
 const CustomBox = styled(Box)`
   height: 70px;
