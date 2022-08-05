@@ -20,7 +20,7 @@ export const Posts = () => {
 
   const getData = async () => {
     const data = await instance.get("/posts");
-    dispatch({ type: PostsActions.GET_POSTS, payload: data.data });
+    dispatch({ type: PostsActions.FETCH_POSTS, payload: data.data });
   };
 
   useEffect(() => {
