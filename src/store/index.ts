@@ -3,6 +3,6 @@ import { posts } from "./reducers/posts";
 
 export const store = configureStore({
   reducer: combineReducers({
-    // posts,
+    posts,
   }),
 });
