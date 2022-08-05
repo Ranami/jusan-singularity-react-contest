@@ -1,10 +1,19 @@
-import axios from "axios";
+import { styled } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { instance } from "../axios-instance";
-import { Post } from "../types/post";
+import { Post } from "../components/Post";
+import { IPost } from "../types/post";
+
+const FlexWrapper = styled("div")`
+  margin: 25px 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+`;
 
 export const Posts = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<IPost[]>([]);
 
   const getData = async () => {
     const data = await instance.get("/posts");
@@ -15,5 +24,11 @@ export const Posts = () => {
     getData();
   }, []);
 
-  return <div>Posts</div>;
+  return (
+    <FlexWrapper>
+      {posts.map((post) => (
+        <Post key={post.id} post={post} />
+      ))}
+    </FlexWrapper>
+  );
 };
