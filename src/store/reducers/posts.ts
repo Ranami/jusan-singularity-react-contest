@@ -10,13 +10,13 @@ const initState: IInitState = {
 };
 
 export enum PostsActions {
-  GET_POSTS = "GET_POSTS",
+  FETCH_POSTS = "FETCH_POSTS",
 }
 
 export const posts = (state = initState, action: PayloadAction<IPost[]>) => {
   const newState = { ...state };
   switch (action.type) {
-    case PostsActions.GET_POSTS:
+    case PostsActions.FETCH_POSTS:
       newState.posts = action.payload;
       break;
     default:
