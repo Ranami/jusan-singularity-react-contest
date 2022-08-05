@@ -4,7 +4,10 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
-const pages = ["Home", "Posts"];
+const pages = [
+  { name: "Home", link: "/" },
+  { name: "Posts", link: "/posts" },
+];
 
 const CustomBox = styled(Box)`
   height: 70px;
@@ -24,8 +27,8 @@ export const Navbar = () => {
     <AppBar position="static">
       <CustomBox>
         {pages.map((page) => (
-          <CustomNavLink to={`/${page.toLowerCase()}`} key={page}>
-            {page}
+          <CustomNavLink to={`${page.link}`} key={page.name}>
+            {page.name}
           </CustomNavLink>
         ))}
       </CustomBox>

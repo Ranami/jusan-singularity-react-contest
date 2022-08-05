@@ -25,7 +25,7 @@ function App() {
         <Wrapper>
           <Navbar />
           <Routes>
-            <Route path="/home" element={<Navigate to="/" />} />
+            <Route path="/" element={"Home"} />
             <Route path="/posts" element={<Posts />} />
           </Routes>
         </Wrapper>
